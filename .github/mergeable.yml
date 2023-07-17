@@ -3,7 +3,7 @@ mergeable:
   - when: pull_request.*, pull_request_review.*
     name: PR title check
     validate:
-      - do: and
+      - do: or
         validate:
           - do: title
             must_include:
@@ -18,7 +18,7 @@ mergeable:
       - do: comment
         payload:
           body: >
-            <h2>Successfully checked for PR title</h2>
+            <h4>Successfully checked for PR title</h4>
             :+1:
       - do: labels
         add: 'ready-for-review'
@@ -27,4 +27,4 @@ mergeable:
         payload:
           body: >
             :warning:
-            <h2>Please add a JIRA or DRQS issue to the title. If there is no issue, please specify [no-ticket]</h2>
+            <h4>Please add a JIRA or DRQS issue to the title. If there is no issue, please specify [no-ticket]</h4>
