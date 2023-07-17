@@ -1,4 +1,4 @@
 # Automation
 Workflow automation
 
-Let me test the first hook
+Let me test the second hook
