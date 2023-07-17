@@ -1,0 +1,27 @@
+version: 2
+mergeable:
+  - when: pull_request.*
+    name: PR title check
+    validate:
+      - do: title
+        or:
+          - must_include:
+            regex: 'ENG1AIOINT-\d+'
+          - must_include:
+            regex: 'DRQS-\d+'
+          - must_include:
+            regex: '[no-ticket]'
+    pass:
+      - do: comment
+        payload:
+          body: >
+            <h2>Successfully checked for PR title</h2>
+            :+1:
+      - do: labels
+        add: 'ready-for-review'
+    fail:
+      - do: comment
+        payload:
+          body: >
+            :warning:
+            <h2>Please add a JIRA or DRQS issue to the title. If there is no issue, please specify [no-ticket]</h2>
