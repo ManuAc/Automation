@@ -6,11 +6,11 @@ mergeable:
       - do: title
         or:
           - must_include:
-            regex: 'ENG1AIOINT-\d+'
+              regex: 'ENG1AIOINT-\d+'
           - must_include:
-            regex: 'DRQS-\d+'
+              regex: 'DRQS-\d+'
           - must_include:
-            regex: '[no-ticket]'
+              regex: '[no-ticket]'
     pass:
       - do: comment
         payload:
