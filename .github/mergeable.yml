@@ -3,7 +3,7 @@ mergeable:
   - when: pull_request.*, pull_request_review.*
     name: PR title check
     validate:
-      - do: or
+      - do: and
         validate:
           - do: title
             must_include:
