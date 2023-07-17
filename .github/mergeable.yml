@@ -4,11 +4,13 @@ mergeable:
     name: PR title check
     validate:
       - do: title
+        no_empty:
+          enabled: true
         must_include:
           regex:
-            - "ENG1AIOINT-\d+"
-            - "DRQS-\d+"
-            - "[no-ticket]"
+            - 'ENG1AIOINT-\d+'
+            - 'DRQS-\d+'
+            - '[no-ticket]'
     pass:
       - do: comment
         payload:
