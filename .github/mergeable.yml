@@ -3,17 +3,14 @@ mergeable:
   - when: pull_request.*, pull_request_review.*
     name: PR title check
     validate:
-      - do: or
-        validate:
-          - do: title
-            must_include:
-              regex: 'ENG1AIOINT-\d+'
-          - do: title
-            must_include:
-              regex: 'DRQS-\d+'
-          - do: title
-            must_include:
-              regex: '[no-ticket]'
+      - do: title
+        or:
+          - must_include:
+            regex: 'ENG1AIOINT-\d+'
+          - must_include:
+            regex: 'DRQS-\d+'
+          - must_include:
+            regex: '[no-ticket]'
     pass:
       - do: comment
         payload:
