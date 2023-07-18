@@ -7,7 +7,9 @@ mergeable:
         no_empty:
           enabled: true
         must_include:
-          regex: 'ENG1AIOINT-\d+'
+          regex:
+            - 'ENG1AIOINT-\d+'
+            - 'DRQS-\d+'
     pass:
       - do: comment
         payload:
