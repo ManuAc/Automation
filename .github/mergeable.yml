@@ -7,10 +7,7 @@ mergeable:
         no_empty:
           enabled: true
         must_include:
-          regex:
-            - 'ENG1AIOINT-\d+'
-            - 'DRQS-\d+'
-            - '[no-ticket]'
+          regex: 'ENG1AIOINT-\d+'
     pass:
       - do: comment
         payload:
