@@ -10,6 +10,7 @@ mergeable:
           regex:
             - 'ENG1AIOINT-\d+'
             - 'DRQS-\d+'
+            - ^\[no-ticket\]
     pass:
       - do: comment
         payload:
