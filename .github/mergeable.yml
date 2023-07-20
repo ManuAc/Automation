@@ -1,6 +1,6 @@
 version: 2
 mergeable:
-  - when: pull_request.*, pull_request_review.*
+  - when: pull_request_review.*
     name: PR title check
     validate:
       - do: title
@@ -8,7 +8,7 @@ mergeable:
           enabled: true
         must_include:
           regex:
-            - 'ENG1AI[A-Z0-9]+-\d+'
+            # - 'ENG1AI[A-Z0-9]+-\d+'
             - 'DRQS-\d+'
             - ^\[no-ticket\]
     pass:
