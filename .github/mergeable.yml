@@ -8,7 +8,7 @@ mergeable:
           enabled: true
         must_include:
           regex:
-            - 'ENG1[A-Z0-9]+-\d+'
+            - '[A-Z][A-Z0-9]+-\d+'
             - 'DRQS-\d+'
             - ^\[no-ticket\]
     pass:
