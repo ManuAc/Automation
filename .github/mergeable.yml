@@ -1,6 +1,6 @@
 version: 2
 mergeable:
-  - when: pull_request.*, pull_request_review.*
+  - when: pull_request_review.*
     name: PR title check
     validate:
       - do: title
@@ -8,14 +8,10 @@ mergeable:
           enabled: true
         must_include:
           regex:
-            - 'ENG1AIOINT-\d+'
+            - 'ENG1[A-Z0-9]+-\d+'
             - 'DRQS-\d+'
             - ^\[no-ticket\]
     pass:
-      - do: comment
-        payload:
-          body: >
-            <h4>:+1: Successfully checked for PR title!</h4>
       - do: labels
         add: 'ready-for-review'
     fail:
