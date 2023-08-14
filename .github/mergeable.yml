@@ -9,7 +9,7 @@ mergeable:
         must_include:
           regex:
             - 'ENG1AI[A-Z0-9]+-\d+'
-            - 'DRQS-\d+'
+            - 'DRQS[ ].\d+'
             - ^\[no-ticket\]
     pass:
       - do: labels
